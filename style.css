@@ -1,7 +1,112 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+
+:root {
+    --branco: hsla(0, 0%, 100%, 0.925);
+    --violeta-acinzentado-claro: hsl(270, 3%, 87%);
+    --violeta-acinzentado-escuro: hsl(279, 6%, 55%);
+    --violeta-escuro: hsl(278, 68%, 11%);
+
+    --fonte: "Space Grotesk", sans-serif;
+}
+
+.bgHeader{
+    width: 100%;
+    height: 350px;
+    display: block;
+}
+
+.containerCartao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.imagemCartaoFrente{
+    width: 350px;
+    margin-top: -82px;
+    margin-left: -20%;
+    z-index: 3;
+    height: auto;
+    display: block;
+}
+
+.imagemCartaoVerso{
+    width: 350px;
+    margin-top: -250px;
+    margin-left: 20%;
+    z-index: 2;
+    height: auto;
+    display: block;
+}
+
+.textoCartaoVerso {
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    position: absolute;
+    z-index: 4;
+    font-family: var(--fonte);
+    font-size: 18px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.63);
+}
+
+.nome {
+    top: 360px;
+    left: 50px;
+    color: var(--branco);
+}
+
+.numero {
+    top: 280px;
+    left: 50px;
+    color: var(--branco);
+    font-size: 25px;
+}
+
+.validade { 
+    top: 360px;
+    left: 265px;
+    color: var(--branco);
+}
+
+.cvc {
+    margin-top: -10px;
+    margin-right: -280px;
+    color: var(--branco);
+}
+
+main {
+    font-family: var(--fonte);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+}
+
+form label {
+    text-align: left;
+}
+
+form #validadeAno, #validadeMes {
+    width: 70px;
 }

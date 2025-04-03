@@ -5,43 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="interactive-card-details-form-main/interactive-card-details-form-main/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
-  <title>Formulário Interativo</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Formulário Interativo</title> 
 </head>
 <body>
+    <div class="containerCartao">
+        <img src="interactive-card-details-form-main/interactive-card-details-form-main/images/bg-main-mobile.png" alt="" class="bgHeader">
+        <img src="interactive-card-details-form-main/interactive-card-details-form-main/images/bg-card-back.png" alt="Cartão" class="imagemCartaoVerso">
+        <div class="card-text cvc" id="cvcCartao">000</div>
+        <img src="interactive-card-details-form-main/interactive-card-details-form-main/images/bg-card-front.png" alt="Cartão" class="imagemCartaoFrente">
+        <div class="card-text nome" id="nomeCartao"><span>Nome do Titular</span></div>
+        <div class="card-text numero" id="numeroCartao">0000 0000 0000 0000</div>
+        <div class="card-text validade" id="validadeCartao">MM/YY</div>
+    </div>
+    <main>
+        <form action="">
+            <label for="nome">Titular</label>
+            <input type="text" class="placeholder" id="nome" placeholder="Nome do Titular">
+        
+            <label for="numeroCartao">Número</label>
+            <input type="text" class="placeholder" id="numero" placeholder="0000 0000 0000 0000">
+        
+            <label for="validade">Validade (MM/AA)</label>
+            <input type="text" class="placeholder" id="validadeMes" placeholder="MM">
+            <input type="text" class="placeholder" id="validadeAno" placeholder="AA">
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+            <label for="cvc">CVC</label>
+            <input type="text" class="placeholder" id="cvc" placeholder="000">
 
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
+            <button>Confirm</button>
+        </form>
+    </main>
 
   <!-- Completed state start -->
 
-  Thank you!
-  We've added your card details
-  Continue
+  <div class="pop-up">
+      Thank you!
+      We've added your card details
+      Continue
+  </div>
   
   <!--<div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
