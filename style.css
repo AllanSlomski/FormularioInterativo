@@ -35,22 +35,32 @@
     width: 100%;
 }
 
-.imagemCartaoFrente{
+.containerCartaoFrente {
+    display: flex;
     width: 250px;
-    margin-top: -55px;
-    margin-left: -20%;
-    z-index: 3;
-    height: auto;
-    display: block;
+    flex-direction: column;
+    margin-left: -80px;
 }
 
-.imagemCartaoVerso{
+.imagemCartao {
+    width: 100%;
+}
+
+.imagemCartaoFrente {
+    width: 100%;
+}
+
+
+.containerCartaoVerso {
+    display: flex;
+    flex-direction: column;
     width: 250px;
     margin-top: -150px;
-    margin-left: 20%;
-    z-index: 2;
-    height: auto;
-    display: block;
+    margin-right: -80px;
+}
+
+.imagemCartaoVerso {
+    width: 100%;
 }
 
 .textoCartaoVerso {
@@ -59,37 +69,34 @@
     flex-direction: column;
 }
 
+.numero {
+    display: flex;
+    margin-top: -80px;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.nomeData {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.cvc {
+    margin-left: 180px;
+    margin-top: -80px;
+    padding-bottom: 2px;
+}
+
 .card-text {
-    position: absolute;
+    display: flex;
+    color: var(--branco);
     z-index: 4;
     font-family: var(--fonte);
     font-size: 16px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.63);
-}
-
-.nome {
-    top: 205px;
-    left: 35px;
-    color: var(--branco);
-}
-
-.numero {
-    top: 160px;
-    left: 35px;
-    color: var(--branco);
-    font-size: 16px;
-}
-
-.validade { 
-    top: 205px;
-    left: 200px;
-    color: var(--branco);
-}
-
-.cvc {
-    margin-top: -55px;
-    margin-right: -220px;
-    color: var(--branco);
 }
 
 main {
@@ -132,7 +139,7 @@ input:invalid + .mensagemErro {
 .formNome, .formNumero {
     display: flex;
     flex-direction: column;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
 .formData-cvc-container {
@@ -145,7 +152,7 @@ input:invalid + .mensagemErro {
     display: flex;
     flex-direction: column;
     width: 170px;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
 .formData-input {
@@ -162,7 +169,7 @@ input:invalid + .mensagemErro {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px 0px;
+    padding: 15px 0px;
 }
 
 .formCVC input {
