@@ -17,25 +17,43 @@
         <img src="interactive-card-details-form-main/interactive-card-details-form-main/images/bg-card-front.png" alt="Cartão" class="imagemCartaoFrente">
         <div class="card-text nome" id="nomeCartao"><span>Nome do Titular</span></div>
         <div class="card-text numero" id="numeroCartao">0000 0000 0000 0000</div>
-        <div class="card-text validade" id="validadeCartao">MM/YY</div>
+        <div class="card-text validade" id="validadeCartao">MM/AA</div>
     </div>
     <main>
-        <form action="">
-            <label for="nome">Titular</label>
-            <input type="text" class="placeholder" id="nome" placeholder="Nome do Titular">
-        
-            <label for="numeroCartao">Número</label>
-            <input type="text" class="placeholder" id="numero" placeholder="0000 0000 0000 0000">
-        
-            <label for="validade">Validade (MM/AA)</label>
-            <input type="text" class="placeholder" id="validadeMes" placeholder="MM">
-            <input type="text" class="placeholder" id="validadeAno" placeholder="AA">
+        <div class="containerForm">
+            <form action="">
+                <div class="formNome">
+                    <label for="nome">Titular</label>
+                    <input type="text" class="placeholder" id="nome" placeholder="Nome do Titular">
+                    <span class="mensagemErro">Não pode estar vazio</span>
+                </div>
+            
+                <div class="formNumero">
+                    <label for="numeroCartao">Número</label>
+                    <input type="text" class="placeholder" id="numero" placeholder="0000 0000 0000 0000">
+                    <span class="mensagemErro">Somente números</span>
+                </div>
+            
+                <div class="formData-cvc-container">
+                    <div class="formData">
+                        <label for="validade">Validade (MM/AA)</label>
+                        <div class="formData-input">
+                            <input type="text" class="placeholder" id="validadeMes" placeholder="MM">
+                            <input type="text" class="placeholder" id="validadeAno" placeholder="AA">
+                            <span class="mensagemErro">Não pode estar vazio</span>
+                        </div>
+                    </div>
+                
+                    <div class="formCVC">
+                        <label for="cvc">CVC</label>
+                        <input type="text" class="placeholder" id="cvc" placeholder="000">
+                        <span class="mensagemErro">Não pode estar vazio</span>
+                    </div>
+                </div>
 
-            <label for="cvc">CVC</label>
-            <input type="text" class="placeholder" id="cvc" placeholder="000">
-
-            <button>Confirm</button>
-        </form>
+                <button>Confirmar</button>
+            </form>
+        </div>
     </main>
 
   <!-- Completed state start -->
