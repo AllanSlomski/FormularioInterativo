@@ -20,6 +20,10 @@
     --fonte: "Space Grotesk", sans-serif;
 }
 
+main {
+    font-family: var(--fonte);
+}
+
 .bgHeader{
     width: 100%;
     height: 180px;
@@ -42,14 +46,9 @@
     margin-left: -80px;
 }
 
-.imagemCartao {
+.imagemCartao, .imagemCartaoFrente, .imagemCartaoVerso {
     width: 100%;
 }
-
-.imagemCartaoFrente {
-    width: 100%;
-}
-
 
 .containerCartaoVerso {
     display: flex;
@@ -57,10 +56,6 @@
     width: 250px;
     margin-top: -150px;
     margin-right: -80px;
-}
-
-.imagemCartaoVerso {
-    width: 100%;
 }
 
 .textoCartaoVerso {
@@ -84,6 +79,10 @@
     margin-left: 10px;
 }
 
+.validade {
+    position: relative;
+}
+
 .cvc {
     margin-left: 180px;
     margin-top: -80px;
@@ -97,10 +96,6 @@
     font-family: var(--fonte);
     font-size: 16px;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.63);
-}
-
-main {
-    font-family: var(--fonte);
 }
 
 .containerForm {
@@ -180,6 +175,10 @@ input:invalid + .mensagemErro {
     color: var(--vermelho-erro);
     font-size: 13px;
     display: none;
+}
+
+.mensagemErro.active {
+    display: block;
 }
 
 button {
