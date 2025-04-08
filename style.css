@@ -74,9 +74,12 @@ main {
 .nomeData {
     display: flex;
     flex-direction: row;
-    gap: 45px;
     margin-top: 15px;
     margin-left: 10px;
+}
+
+.nome {
+    margin-right: 45px;
 }
 
 .validade {

@@ -25,7 +25,9 @@
             <div class="card-text numero" id="numeroCartao">0000 0000 0000 0000</div>
             <div class="nomeData">
                 <div class="card-text nome" id="nomeCartao"><span>Nome do Titular</span></div>
-                <div class="card-text validade" id="validadeCartao">MM/AA</div>
+                <div class="card-text validade" id="validadeCartaoMes">MM</div>
+                <div class="card-text validade" id="barra">/</div>
+                <div class="card-text validade" id="validadeCartaoAno">AA</div>
             </div>
         </div>
     </div>
@@ -50,8 +52,13 @@
                         <label for="validade">Validade (MM/AA)</label>
                         <div class="formData-input">
                             <input type="text" class="placeholder" id="validadeMes" maxlength="2" placeholder="MM">
+                            <span class="mensagemErro" id="erroNumeroMes">Somente números</span>
+
                             <input type="text" class="placeholder" id="validadeAno" maxlength="2" placeholder="AA">
-                            <span class="mensagemErro" id="erroNumero">Somente números</span>
+                            <span class="mensagemErro" id="erroMes">Insira um mês válido</span>
+                            <span class="mensagemErro" id="erroAno">Insira um ano válido</span>
+                            <span class="mensagemErro" id="erroNumeroAno">Somente números</span>
+                            
 
                         </div>
                     </div>
@@ -59,7 +66,7 @@
                     <div class="formCVC">
                         <label for="cvc">CVC</label>
                         <input type="text" class="placeholder" id="cvc" maxlength="3" placeholder="000">
-                        <span class="mensagemErro" id="erroNumero">Somente números</span>
+                        <span class="mensagemErro" id="erroNumeroCVC">Somente números</span>
                     </div>
                 </div>
 
