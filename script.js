@@ -3,85 +3,126 @@ const nomeInput = document.getElementById("nome");
 const mesInput = document.getElementById("validadeMes");
 const anoInput = document.getElementById("validadeAno");
 const cvcInput = document.getElementById("cvc");
+const form = document.getElementById("form");
 
-nomeInput.addEventListener("input", function() {
-    let regex = /^[a-zA-z-" "-""-]+$/;
-    let nomeCartao = this.value;
+function validarNome(input) {
+    let regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+    let nomeCartao = input.value;
     nomeCartao = nomeCartao.slice(0,13);
     document.getElementById("nomeCartao").textContent = nomeCartao || "Nome do Titular";
-    if (!regex.test(nomeInput.value)){
+    if (input.value == ""){
+        document.getElementById("erroNome").classList.remove("active");
+        return false;
+    }
+    if (!regex.test(input.value)){
         document.getElementById("erroNome").classList.add("active");
         document.getElementById("nomeCartao").textContent = "Nome do Titular";
+        return false;
     } else {
         document.getElementById("erroNome").classList.remove("active");
-    }
-    if (nomeInput.value == ""){
-        document.getElementById("erroNome").classList.remove("active");
+        return true;
     }
 }
-);
 
-numeroInput.addEventListener("input", function() {
-    let numeroCartao = this.value.replace(/\D/g, "");
+function validarNumero(input) {
+    let numeroCartao = input.value.replace(/\D/g, "");
     numeroCartao = numeroCartao.slice(0, 16);
     numeroCartao = numeroCartao.replace(/(.{4})/g, "$1 ").trim();
     document.getElementById("numeroCartao").textContent = numeroCartao || "0000 0000 0000 0000";
     let regex = /^[0-9]+$/;
-    if (!regex.test(numeroInput.value)){
-        document.getElementById("erroNumero").classList.add("active");
-    } else {
-        document.getElementById("erroNumero").classList.remove("active")
-    }
-    if (numeroInput.value == ""){
+    if (input.value == ""){
         document.getElementById("erroNumero").classList.remove("active");
+        return false;
     }
+    if (!regex.test(input.value)){
+        document.getElementById("erroNumero").classList.add("active");
+        return false;
+    } else {
+        document.getElementById("erroNumero").classList.remove("active");
+        return true;
     }
-);
+}
 
-mesInput.addEventListener("input", function() {
-    let mes = this.value;
+function validarMes(input) {
+    let mes = input.value;
     let regex = /^[0-9]+$/;
     document.getElementById("validadeCartaoMes").textContent = mes || "MM";
-    if ((mes < 1 || mes > 12 && mes.length == 2) || !regex.test(mes)) {
-        document.getElementById("erroMes").classList.add("active");
-        document.getElementById("validadeCartaoMes").textContent = "MM";
-    } else {
-        document.getElementById("erroMes").classList.remove("active");
-    }
     if (mes == "") {
         document.getElementById("erroMes").classList.remove("active");
+        return false;
+    }
+    if (((mes < 1 || mes > 12) && mes.length == 2) || !regex.test(mes)) {
+        document.getElementById("erroMes").classList.add("active");
+        document.getElementById("validadeCartaoMes").textContent = "MM";
+        return false;
+    } else {
+        document.getElementById("erroMes").classList.remove("active");
+        return true;
     }
 }
-);
 
-anoInput.addEventListener("input", function() {
-    let ano = this.value;
+function validarAno(input) {
+    let ano = input.value;
     let regex = /^[0-9]+$/;
     document.getElementById("validadeCartaoAno").textContent = ano || "AA";
-    if ((ano < 25 || ano > 38 && ano.length == 2) || !regex.test(ano)) {
-        document.getElementById("erroAno").classList.add("active");
-        document.getElementById("validadeCartaoAno").textContent = "AA";
-    } else {
-        document.getElementById("erroAno").classList.remove("active");
-    }
     if (ano == "") {
         document.getElementById("erroAno").classList.remove("active");
+        return false;
+    }
+    if (((ano < 25 || ano > 38) && ano.length == 2) || !regex.test(ano)) {
+        document.getElementById("erroAno").classList.add("active");
+        document.getElementById("validadeCartaoAno").textContent = "AA";
+        return false;
+    } else {
+        document.getElementById("erroAno").classList.remove("active");
+        return true;
     }
 }
-);
 
-cvcInput.addEventListener("input", function () {
-    let cvc = this.value;
+function validarCVC(input) {
+    let cvc = input.value;
     let regex = /^[0-9]+$/;
     document.getElementById("cvcCartao").textContent = cvc || "000";
+    if (cvc == "") {
+        document.getElementById("erroNumeroCVC").classList.remove("active");
+        return false;
+    }
     if (!regex.test(cvc)) {
         document.getElementById("erroNumeroCVC").classList.add("active");
         document.getElementById("cvcCartao").textContent = "000";
+        return false;
     } else {
         document.getElementById("erroNumeroCVC").classList.remove("active");
+        return true;
     }
-    if (cvc == "") {
-        document.getElementById("erroNumeroCVC").classList.remove("active");
+}
+
+
+nomeInput.addEventListener("input", () => validarNome(nomeInput));
+
+numeroInput.addEventListener("input", () => validarNumero(numeroInput));
+
+mesInput.addEventListener("input", () => validarMes(mesInput));
+
+anoInput.addEventListener("input", () => validarAno(anoInput));
+
+cvcInput.addEventListener("input", () => validarCVC(cvcInput));
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const validoNome = validarNome(nomeInput);
+    const validoNumero = validarNumero(numeroInput);
+    const validoMes = validarMes(mesInput);
+    const validoAno = validarAno(anoInput);
+    const validoCVC = validarCVC(cvcInput);
+
+    if (!validoNome || !validoNumero || !validoMes || !validoAno || !validoCVC) {
+        alert("Dados inválidos!");
     }
+
+    document.getElementById("form").classList.add("pop-up");
+    document.getElementById("mensagemSucesso").classList.remove("pop-up");
+
 }
 );

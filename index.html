@@ -24,7 +24,7 @@
             </div>
             <div class="card-text numero" id="numeroCartao">0000 0000 0000 0000</div>
             <div class="nomeData">
-                <div class="card-text nome" id="nomeCartao"><span>Nome do Titular</span></div>
+                <div class="card-text nome" id="nomeCartao">Nome do Titular</div>
                 <div class="card-text validade" id="validadeCartaoMes">MM</div>
                 <div class="card-text validade" id="barra">/</div>
                 <div class="card-text validade" id="validadeCartaoAno">AA</div>
@@ -34,7 +34,7 @@
 
     <main>
         <div class="containerForm">
-            <form name="">
+            <form name="" id="form">
                 <div class="formNome">
                     <label for="nome">Titular</label>
                     <input type="text" class="placeholder" id="nome" maxlength="" placeholder="Nome do Titular">
@@ -70,20 +70,18 @@
                     </div>
                 </div>
 
-                <button>Confirmar</button>
+                <button type="submit" id="confirmar">Confirmar</button>
             </form>
         </div>
     </main>
 
   <!-- Pagina de confirmação -->
 
-  <div class="pop-up">
-      
+  <div id="mensagemSucesso" class="pop-up">
+    <h2>Sucesso!</h2>
+    <p>Os dados do seu cartão foram salvos.</p>
+    <button>Voltar</button>
   </div>
-  
-  <!--<div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>-->
+      
 </body>
 </html>
