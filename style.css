@@ -196,6 +196,20 @@ button {
     border-radius: 10px;
 }
 
-.pop-up {
+.oculto {
     display: none;
+}
+
+#mensagemSucesso {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--violeta-escuro);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto;
+    width: 350px;
 }

@@ -4,6 +4,7 @@ const mesInput = document.getElementById("validadeMes");
 const anoInput = document.getElementById("validadeAno");
 const cvcInput = document.getElementById("cvc");
 const form = document.getElementById("form");
+const btnVoltar = document.getElementById("voltar");
 
 function validarNome(input) {
     let regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
@@ -119,10 +120,21 @@ form.addEventListener("submit", function (event) {
 
     if (!validoNome || !validoNumero || !validoMes || !validoAno || !validoCVC) {
         alert("Dados inválidos!");
+    } else {
+        document.getElementById("form").classList.add("oculto");
+        document.getElementById("mensagemSucesso").classList.remove("oculto");
     }
+}
+);
 
-    document.getElementById("form").classList.add("pop-up");
-    document.getElementById("mensagemSucesso").classList.remove("pop-up");
-
+btnVoltar.addEventListener("click", function () {
+    document.getElementById("form").classList.remove("oculto");
+    document.getElementById("mensagemSucesso").classList.add("oculto");
+    form.reset();
+    validarNome(nomeInput);
+    validarNumero(numeroInput);
+    validarMes(mesInput);
+    validarAno(anoInput);
+    validarCVC(cvcInput);
 }
 );
