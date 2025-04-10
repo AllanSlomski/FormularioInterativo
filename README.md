@@ -37,7 +37,3 @@ Feito por [Allan Slomski](https://github.com/AllanSlomski)
 
 ---
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e compartilhar.
-```
